@@ -82,15 +82,34 @@ public class HashMapy {
 //                .collect(Collectors.toList());
         //      System.out.println ( nazwiskoKowalski);
 
-        Map<Long, Obywatel> nazwiskoKowalski2 = new HashMap<> ( );
+        //========================WAZNE========================================//
+
+        //Map<Long, Obywatel> nazwiskoKowalski2 = map.entrySet ( ).stream ( )
+        //				.filter (nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
+        //				.collect (Collectors.toMap (e->e.getKey(), Function.identity()));
+
+        //========================WAZNE========================================//
+
+
+        Map<Long, Obywatel> nazwiskoKowalski2 = map.entrySet ( ).stream ( )
+                .filter (nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
+                .collect (Collectors.toMap (e->e.getKey(), Map.Entry::getValue));
+
+        System.out.println (nazwiskoKowalski2 );
+        System.out.println ("======================================" );
+
+
+
+
+        Map<Long, Obywatel> nazwiskoKowalski3 = new HashMap<> ( );
         for (Map.Entry<Long, obj.Obywatel> nazwisko : map.entrySet ( )) {
             if (nazwisko.getValue ( ).getNazwisko ( ).equals ("Kowalski")) {
-                if (nazwiskoKowalski2.put (nazwisko.getKey ( ), nazwisko.getValue ()) != null) {
+                if (nazwiskoKowalski3.put (nazwisko.getKey ( ), nazwisko.getValue ()) != null) {
                     throw new IllegalStateException ("Duplicat");
                 }
             }
         }
-        System.out.println (nazwiskoKowalski2 );
+        System.out.println (nazwiskoKowalski3 );
 
 
         System.out.println ("Sposob6" );
