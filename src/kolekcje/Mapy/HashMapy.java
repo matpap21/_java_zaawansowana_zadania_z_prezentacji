@@ -3,6 +3,7 @@ package kolekcje.Mapy;
 import obj.Obywatel;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class HashMapy {
@@ -31,7 +32,11 @@ public class HashMapy {
         System.out.println ("Sposob2" );
         System.out.println (Arrays.toString(map.entrySet().toArray()));
         System.out.println ("Sposob3" );
-        map.forEach((key, value) -> System.out.println(key + " " + value));
+        for (Map.Entry<Long, obj.Obywatel> e : map.entrySet ( )) {
+            Long key = e.getKey ( );
+            obj.Obywatel value = e.getValue ( );
+            System.out.println (key + " " + value);
+        }
         System.out.println ("Sposob4" );
         Map<String, List<Obywatel>> mapViaSurname = new HashMap<> (  );
         mapViaSurname.put ("Kowalski",new ArrayList<> ( Arrays.asList (j1,j2,j3) ));
@@ -53,33 +58,39 @@ public class HashMapy {
                 }
         System.out.println ("==============================" );
 
-            // INTELIJ IDEA KRZYCZY
-        Map<Long, Obywatel> nazwiskoKowalski = map.entrySet ( ).stream ( )
-                .collect(Collectors.toList (
-                        e -> e.getKey(),
-                        e -> e.getValue ().getNazwisko ().equals ("Kowalski")
-                ));
+ //           // INTELIJ IDEA KRZYCZY
+//        Map<Long, Obywatel> nazwiskoKowalski = map.entrySet ( ).stream ( )
+  //              .collect(Collectors.toList (
+//                        e -> e.getKey(),
+/////                        e -> e.getValue ().getNazwisko ().equals ("Kowalski")
+ //               ));
         // INTELIJ IDEA KRZYCZY
-        Map<Long, String> nazwiskoKowalski2 = map.entrySet ( ).stream ( )
-                        .filter (nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
-                                .map (Map.Entry::getKey)
-                                        .collect (Collectors.toMap ());
-
-        // INTELIJ IDEA KRZYCZY
-        Map<Long, Obywatel> nazwiskoKowalski3 = map.entrySet ( ).stream ( )
-                        .map(nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
-                        .flatMap ()
-                        .collect (Collectors.toMap ());
+//        Map<Long, String> nazwiskoKowalski2 = map.entrySet ( ).stream ( )
+//                        .filter (nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
+        //                               .map (Map.Entry::getKey)
+//                                        .collect (Collectors.toMap ());
 
         // INTELIJ IDEA KRZYCZY
-        Map<Long, Obywatel> nazwiskoKowalski4 = map.entrySet ( ).stream ( )
-                .map(e -> new HashMap (e.getKey(), e.getValue().getNazwisko ().equals ("Kowalski")))
-                .collect(Collectors.toList());
+        //       Map<Long, Obywatel> nazwiskoKowalski3 = map.entrySet ( ).stream ( )
+        //                       .map(nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
+        //                       .flatMap ()
+//                        .collect (Collectors.toMap ());
 
+        // INTELIJ IDEA KRZYCZY
+//        Map<Long, Obywatel> nazwiskoKowalski4 = map.entrySet ( ).stream ( )
+//                .map(e -> new HashMap (e.getKey(), e.getValue().getNazwisko ().equals ("Kowalski")))
+//                .collect(Collectors.toList());
+        //      System.out.println ( nazwiskoKowalski);
 
-
-        System.out.println ( nazwiskoKowalski);
-
+        Map<Long, Obywatel> nazwiskoKowalski2 = new HashMap<> ( );
+        for (Map.Entry<Long, obj.Obywatel> nazwisko : map.entrySet ( )) {
+            if (nazwisko.getValue ( ).getNazwisko ( ).equals ("Kowalski")) {
+                if (nazwiskoKowalski2.put (nazwisko.getKey ( ), nazwisko.getValue ()) != null) {
+                    throw new IllegalStateException ("Duplicat");
+                }
+            }
+        }
+        System.out.println (nazwiskoKowalski2 );
 
 
         System.out.println ("Sposob6" );
