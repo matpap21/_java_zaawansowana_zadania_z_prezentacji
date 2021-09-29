@@ -17,5 +17,28 @@ public class Main {
         System.out.println (nowalista.size () );
         System.out.println ("==================================" );
         System.out.println (nowalista.stream( ).max (Comparator.reverseOrder ()) );
+        System.out.println ("==================================" );
+        System.out.println (nowalista.stream ().max (Comparator.naturalOrder ()));
+
+
+
+        String s1 = "common_prefixDB";
+        System.out.println("common_prefixDB" + s1.hashCode());
+        String s2 = "common_prefixCa";
+        System.out.println("common_prefixCa" + s2.hashCode());
+
+        Set<String> strings_asText = new HashSet<> (  );
+        strings_asText.add (s1);
+        strings_asText.add (s2);
+
+        System.out.println ("============================================" );
+        System.out.println ("Rozmiar " + strings_asText.size () );
+        System.out.println ("============================================" );
+        System.out.println (s1.equals (s2) );
+        System.out.println ("============================================" );
+        System.out.println (s1.equalsIgnoreCase (s2) );
+
+
     }
+
 }

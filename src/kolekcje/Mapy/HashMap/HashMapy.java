@@ -1,4 +1,4 @@
-package kolekcje.Mapy;
+package kolekcje.Mapy.HashMap;
 
 import obj.Obywatel;
 
@@ -21,7 +21,7 @@ public class HashMapy {
         List<Obywatel> obywatels = new ArrayList<> ( Arrays.asList (j1,j2,j3,j4) );
 
         Map<Long, Obywatel> map = new HashMap<>();
-        map.put (j1.getPesel (),j1);
+        map.put (j1.getPesel (),j1); // kluczem jest pesel,
         map.put (j2.getPesel (),j2);
         map.put (j3.getPesel (),j3);
         map.put (j4.getPesel (),j4);
@@ -91,25 +91,25 @@ public class HashMapy {
         //========================WAZNE========================================//
 
 
-        Map<Long, Obywatel> nazwiskoKowalski2 = map.entrySet ( ).stream ( )
+        Map<Long, Obywatel> nazwiskoKowalski_1_SposobszukaniapoNAzwisku = map.entrySet ( ).stream ( )
                 .filter (nazwisko ->nazwisko.getValue ().getNazwisko ().equals ("Kowalski"))
                 .collect (Collectors.toMap (e->e.getKey(), Map.Entry::getValue));
 
-        System.out.println (nazwiskoKowalski2 );
+        System.out.println (nazwiskoKowalski_1_SposobszukaniapoNAzwisku );
         System.out.println ("======================================" );
 
 
 
 
-        Map<Long, Obywatel> nazwiskoKowalski3 = new HashMap<> ( );
+        Map<Long, Obywatel> nazwiskoKowalski_2_SposobszukaniapoNAzwisku = new HashMap<> ( );
         for (Map.Entry<Long, obj.Obywatel> nazwisko : map.entrySet ( )) {
             if (nazwisko.getValue ( ).getNazwisko ( ).equals ("Kowalski")) {
-                if (nazwiskoKowalski3.put (nazwisko.getKey ( ), nazwisko.getValue ()) != null) {
+                if (nazwiskoKowalski_2_SposobszukaniapoNAzwisku.put (nazwisko.getKey ( ), nazwisko.getValue ()) != null) {
                     throw new IllegalStateException ("Duplicat");
                 }
             }
         }
-        System.out.println (nazwiskoKowalski3 );
+        System.out.println (nazwiskoKowalski_2_SposobszukaniapoNAzwisku );
 
 
         System.out.println ("Sposob6" );
