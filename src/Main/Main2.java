@@ -9,7 +9,6 @@ public class Main2 {
         // Deklaracja listy
         List<Integer> integerList = new ArrayList<> ( );
 
-
         // Deklaracja random'a
         Random random = new Random ( );
 
@@ -17,12 +16,11 @@ public class Main2 {
         for (int i = 0; i < 10; i++) {
             int value = random.nextInt (500);
             integerList.add (value);
-
         }
 
 
         // wypisanie całej listy
-        System.out.println ("Print IntigerList" );
+        System.out.println ("Print IntigerList");
         System.out.println (integerList);
 
         // ## Obliczanie sumy
@@ -34,9 +32,8 @@ public class Main2 {
         for (int i = 0; i < integerList.size ( ); i++) {
             // sumujemy elementy w pętli
             // wskazówka: int wartosc = list.get(i);
-            int wartosc = integerList.get (i);
-            suma = suma + wartosc;
-
+            int value = integerList.get (i);
+            suma = suma + value;
         }
 
 
@@ -46,9 +43,9 @@ public class Main2 {
 
 
         double srednia = suma / integerList.size ( );
-        System.out.println ("Sum" );
+        System.out.println ("Sum");
         System.out.println (suma);
-        System.out.println ("Average" );
+        System.out.println ("Average");
         System.out.println (srednia);
 
 
@@ -86,16 +83,17 @@ public class Main2 {
         // lista.get( (lista.size() / 2) )
 
         double mediana = 0;
+
         if (integerList_copy.size ( ) % 2 == 0) {
             int element1 = integerList_copy.get ((integerList_copy.size ( ) / 2) - 1);
             int element2 = integerList_copy.get ((integerList_copy.size ( ) / 2));
             mediana = (element1 + element2) / 2.0;
-        }else {
-            int element3 = integerList_copy.get ((integerList.size ( ))/2);
-            mediana = element3;
+        } else {
+            int element3 = integerList_copy.get ((integerList_copy.size ( ) / 2));
         }
-        System.out.println ("Mediana" );
-        System.out.println (mediana );
+
+        System.out.println ("Mediana");
+        System.out.println (mediana);
 
 
         // Pamiętajcie w tym miejscu pracować na liście pierwszej (orginalnej)
@@ -103,38 +101,46 @@ public class Main2 {
         // pobieranie pierwszego elementu z Listy i nadawanie mu wartosci jako mix i max
 
         int min = integerList.get (0);
-        int max = integerList.get(0);
+        int max = integerList.get (0);
 
 
         // pętla która szuka min/max
 
-        // jeśli trafiliśmy na liczbę mniejszą to zapisujemy nowe minimum
-
-        for (int i = 0;  i< integerList.size () ; i++) {
-            if (min > integerList.get (i)){
-                max = integerList.get (i);
+        for (int i = 1; i < integerList.size ( ); i++) {
+            if (min > integerList.get (i)) {
+                min = integerList.get (i);
             }
 
-        }
-        // jeśli trafiliśmy na liczbę większą to zapisujemy nowe maksimum
-        for (int i = 0; i < integerList.size (); i++) {
-            if(max < integerList.get (i)){
+            // jeśli trafiliśmy na liczbę mniejszą to zapisujemy nowe minimum
+
+            // jeśli trafiliśmy na liczbę większą to zapisujemy nowe maksimum
+            if (max < integerList.get (i)) {
                 max = integerList.get (i);
             }
         }
 
-
+        System.out.println("Max: " + max + " Min: " + min);
         //     - po znalezieniu elementu znajdź index elementu maksymalnego używając kolejnej pętli for
 
-
+        int indexmin = 0;
+        int indexmax = 0;
 
         // pętla która szuka indeksów min/max
-
+        for (int i = 0; i < integerList.size ( ); i++) {
+            if (min == integerList.get (i)) {
+                indexmin = i;
+            }
+            if(max == integerList.get (i)){
+                indexmax = i;
+            }
+        }
 
         // jeśli trafiliśmy na liczbę większą to zapisujemy nowe maksimum
 
+        System.out.println ("Max index " + indexmax + " min index " + indexmin  );
 
         // - po znalezieniu elementów (największy i najmniejszy) znajdź index posługując się metodą indexof
+        System.out.println ("Max index "+ integerList.indexOf (max) + " min index " + integerList.indexOf (min) );
 
     }
 }
