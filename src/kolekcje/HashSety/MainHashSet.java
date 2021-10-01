@@ -1,8 +1,6 @@
 package kolekcje.HashSety;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class MainHashSet {
     public static void main(String[] args) {
@@ -33,7 +31,14 @@ public class MainHashSet {
         for (Integer elementy : hashSet) {
             System.out.println (elementy);
         }
+        System.out.println ("Change HashSet to TreeSet" );
+        Set<Integer> changeSet_to_TreeSet =  new TreeSet<Integer> ( hashSet );
+        System.out.println (changeSet_to_TreeSet );
 
+        for (Integer elementy: changeSet_to_TreeSet
+             ) {
+            System.out.println (elementy );
+        }
 
 
     }
