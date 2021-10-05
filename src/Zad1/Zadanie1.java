@@ -1,9 +1,6 @@
 package Zad1;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Zadanie1 {
     public static void main(String[] args) {
@@ -35,5 +32,7 @@ public class Zadanie1 {
         }
         // wypisanie listy
         System.out.println("Lista, drugie wypisanie: " + list);
+
+
     }
 }

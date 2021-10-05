@@ -14,6 +14,8 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             liczba = scanner.nextInt ( );
             list.add (liczba);
+
+
         }
 
         for (int i =0; i< 5; i++){
@@ -23,5 +25,6 @@ public class Main {
         }
 
         System.out.println (list );
+
     }
 }
