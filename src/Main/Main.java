@@ -26,5 +26,37 @@ public class Main {
 
         System.out.println (list );
 
+
+        String slowa = "MROKOS";
+
+        List<String> stringList = new LinkedList<String> (  );
+
+
+        for (int i = 0; i < slowa.length (); i++) {
+            stringList.add (String.valueOf (slowa.charAt (i)));
+        }
+
+
+        System.out.println ("Tekst w formacie oryginalnym" );
+        System.out.println (stringList );
+        System.out.println ("Tekst po sformatowaniu" );
+        stringList = reverseLinkedList((LinkedList<String>) stringList);
+        System.out.println (stringList );
+        
     }
+
+
+
+    public static LinkedList<String> reverseLinkedList(LinkedList<String> llist)
+    {
+        LinkedList<String> revLinkedList = new LinkedList<String>();
+        for (int i = llist.size() - 1; i >= 0; i--) {
+
+            // Append the elements in reverse order
+            revLinkedList.add(llist.get(i));
+        }
+        // Return the reversed arraylist
+        return revLinkedList;
+    }
+
 }
