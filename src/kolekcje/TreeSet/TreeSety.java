@@ -1,6 +1,6 @@
 package kolekcje.TreeSet;
 
-import kolekcje.Copmarator.ComparingCitizien;
+import kolekcje.Comparator.ComparingCitizien;
 import obj.Obywatel;
 
 import java.util.*;

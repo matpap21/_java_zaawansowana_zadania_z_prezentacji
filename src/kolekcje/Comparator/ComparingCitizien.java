@@ -1,9 +1,8 @@
-package kolekcje.Copmarator;
+package kolekcje.Comparator;
 
 import obj.Obywatel;
 
 import java.util.Comparator;
-import java.util.List;
 
 public class ComparingCitizien implements Comparator<Obywatel> {
 

@@ -1,4 +1,4 @@
-package kolekcje.Copmarator;
+package kolekcje.Comparator;
 
 import obj.Obywatel;
 
