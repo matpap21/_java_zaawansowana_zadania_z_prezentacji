@@ -15,6 +15,8 @@ public class Main {
         Ptak bird4 = new Sowa ();
         bird4.spiewaj ();
 
+        System.out.println ("=======================================" );
+
         List<Ptak> ptaki = new ArrayList<> (  );
         ptaki.add (new Kukulka ());
         ptaki.add (new Sowa ());
