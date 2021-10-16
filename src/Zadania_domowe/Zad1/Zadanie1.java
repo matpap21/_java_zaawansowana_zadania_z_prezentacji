@@ -1,4 +1,4 @@
-package Zad1;
+package Zadania_domowe.Zad1;
 
 import java.util.*;
 
