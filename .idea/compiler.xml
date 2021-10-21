@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="_java_zaawansowana_moje_cwiczenia" target="8" />
+      <module name="_java_zaawansowana_moje_cwiczenia" target="1.8" />
       <module name="zd_java_92_zadania_domowe" target="1.8" />
     </bytecodeTargetLevel>
   </component>
