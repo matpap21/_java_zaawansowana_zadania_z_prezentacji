@@ -48,10 +48,10 @@ public class MainArrrayList {
         List<Integer> copyIntegerList = new ArrayList<> (  );
 
         for (int i = 0; i < integerList.size ( ); i++) {
-            // jeśli trafiliśmy na liczbę mniejszą to usuwany
+            // jeśli trafiliśmy na liczbę mniejszą niz AVG to usuwany
             if (avg > integerList.get (i)) {
-                System.out.print (i + ", ");
-                stringList.remove (i);
+                System.out.print (i + ", " + integerList.get (i));
+                integerList.remove (i);
                 i = i-1;
             }else {
                 copyIntegerList.add (i);
@@ -65,11 +65,11 @@ public class MainArrrayList {
     }
 
     private static void addelementstoListchoosenbyuser(List<Integer> integerList, int wartosc) {
-        for(int i =0; i< integerList.size ( );i++){
-            wartosc = i;
+        //for(int i =0; i< integerList.size ( );i++){
+         //   wartosc = i;
             integerList.add (wartosc);
         }
-    }
+
 
     private static void add100RandomElements(List<Integer> integerList) {
         Random random = new Random ( );

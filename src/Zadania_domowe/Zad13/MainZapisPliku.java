@@ -3,25 +3,52 @@ package Zadania_domowe.Zad13;
 //"Hello World!" a następnie zamyka plik.
 
 import java.io.*;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class MainZapisPliku {
     public static void main(String[] args) {
 
         String sciezkaRelatywna = "output_1.txt";
+        File file = new File (sciezkaRelatywna);
 
-        File sciezka = new File (sciezkaRelatywna);
+        // Czy istnieje?
+        System.out.println ("Czy istnieje? " + file.exists ( ));
+        if (file.exists ( )) {
 
-        try (PrintWriter printWriter = new PrintWriter (new FileOutputStream (sciezka))) {
-        String linia;
-        linia = "Avada Kedavra";
+            System.out.println ("Sciezka absolutna: " + file.getAbsolutePath ( ));
+            System.out.println ("Sciezka relative: " + file.getPath ( ));
+            System.out.println ("Nazwa: " + file.getName ( ));
+            System.out.println ("Czy jest katalogiem: " + file.isDirectory ( ));
+            System.out.println ("Wielkosc: " + file.length ( ));
+            System.out.println ("Data ostatniej modyfikacji: " + file.lastModified ( ));
 
-        printWriter.println (linia);
-        printWriter.flush ();
+            Timestamp timestamp = new Timestamp (file.lastModified ( ));
+            LocalDateTime localDate = timestamp.toLocalDateTime ( );
+            System.out.println ("Data ostatniej modyfikacji: " + localDate);
 
-
-        }catch (FileNotFoundException e){
-            System.out.println("Nie znaleziono pliku.");
+        } else {
+            System.out.println ("File not exists");
         }
+
+
+        try (PrintWriter printWriter = new PrintWriter (new FileOutputStream (file))) {
+
+            for (int i = 0; i < 5; i++) {
+                String linia = "MorsMordre";
+
+                printWriter.println (linia);
+                printWriter.flush ( );
+
+            }
+
+
+        } catch (FileNotFoundException e) {
+            System.err.println ("File not exists");
+        } catch (IOException ioe) {
+            System.err.println ("Error");
+        }
+
 
     }
 }

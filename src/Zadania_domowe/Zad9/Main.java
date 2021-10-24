@@ -28,31 +28,41 @@ public class Main {
         System.out.println ("================================================");
 
         RodzajPosiłku rodzajPosiłku = wybranyRodzajPosilkuprzezUzytkownika (scanner);
-        String Nazwaposilku = wybranaNazwaPosilkuprzezUzytkownika (posilekLists, scanner);
+        Posilek wybranyposilek = wybranaNazwaPosilkuprzezUzytkownika (posilekLists, scanner,rodzajPosiłku);
 
-        System.out.println ("Wybrano " + rodzajPosiłku + " " + Nazwaposilku);
+        System.out.println ("Wybrano " + rodzajPosiłku + " " + wybranyposilek);
 
 
     }
 
-    private static String wybranaNazwaPosilkuprzezUzytkownika(List<Posilek> posilekLists, Scanner scanner) {
+    private static Posilek wybranaNazwaPosilkuprzezUzytkownika(List<Posilek> posilekLists, Scanner scanner, RodzajPosiłku rodzajPosiłku) {
         String NazwaPosilku = null;
-
+        Posilek wybranyPosilek =null;
         do {
             try {
                 System.out.println ("Podaj nazwe posilku");
                 for (Posilek posilek : posilekLists) {
-                    System.out.println (posilek.getNazwa ( ).toUpperCase ( ));
+                    if(posilek.getRodzajPosiłku ().equals (rodzajPosiłku)){
+                        System.out.println (posilek.getNazwa ( ).toUpperCase ( ));
+                    }
                 }
                 String wyboruzytkownika2 = scanner.next ( );
-                NazwaPosilku = String.valueOf (wyboruzytkownika2.toUpperCase ( ).contains (Posilek.class.getName ( ).toUpperCase ( )));
+                for (Posilek posilek : posilekLists) {
+                    if(posilek.getNazwa ().equalsIgnoreCase (wyboruzytkownika2)){
+                        wybranyPosilek = posilek;
+                        break;
+                    }
+
+                }
+
 
             } catch (IllegalArgumentException iae) {
                 System.err.println ("Niepoprawny wybór, powtórz");
             }
 
-        } while (NazwaPosilku == null);
-        return NazwaPosilku;
+        } while (wybranyPosilek == null);
+
+        return wybranyPosilek;
     }
 
 

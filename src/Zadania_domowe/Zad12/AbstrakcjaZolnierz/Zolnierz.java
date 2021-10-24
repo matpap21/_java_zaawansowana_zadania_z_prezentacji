@@ -1,4 +1,4 @@
-package Zadania_domowe.Zad12.AbstrakcjaSoldier;
+package Zadania_domowe.Zad12.AbstrakcjaZolnierz;
 
 public class Zolnierz extends Person {
     public Ranga ranga;
