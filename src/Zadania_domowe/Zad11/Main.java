@@ -21,7 +21,7 @@ public class Main {
         for (ICzłonekRodziny rodzinka : członekRodzinyList) {
             System.out.println(rodzinka.toString ().getClass ().getName ());
             rodzinka.przedstawsie ();
-            System.out.println ("Czy jest dorosly/dorosla " + rodzinka.jestDorosly () );
+            System.out.println ("Czy jest dorosly/dorosla ? " + rodzinka.jestDorosly () );
             System.out.println ( );
 
         }

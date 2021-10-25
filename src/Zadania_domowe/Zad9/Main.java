@@ -52,7 +52,6 @@ public class Main {
                         wybranyPosilek = posilek;
                         break;
                     }
-
                 }
 
 
