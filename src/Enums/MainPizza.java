@@ -1,6 +1,5 @@
 package Enums;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class MainPizza {
@@ -8,9 +7,9 @@ public class MainPizza {
 
         Scanner scanner = new Scanner (System.in);
         System.out.println("Podaj wielkosc pizzy: ");
-         int choosenPizzabyUser = scanner.nextInt ( );
+         String choosenPizzabyUser = scanner.next ( ).toUpperCase ();
 
-        PizzaSize pizzaSize = PizzaSize.valueOf (String.valueOf (choosenPizzabyUser));
+        PizzaSize pizzaSize = PizzaSize.valueOf ( choosenPizzabyUser);
         System.out.println ("Size of choosen pizza is " + pizzaSize.getSIZE () );
 
 

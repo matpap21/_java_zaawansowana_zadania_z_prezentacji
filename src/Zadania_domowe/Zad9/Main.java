@@ -48,7 +48,7 @@ public class Main {
                 }
                 String wyboruzytkownika2 = scanner.next ( );
                 for (Posilek posilek : posilekLists) {
-                    if(posilek.getNazwa ().equalsIgnoreCase (wyboruzytkownika2)){
+                    if(posilek.getNazwa ().equalsIgnoreCase (wyboruzytkownika2.toUpperCase ())){
                         wybranyPosilek = posilek;
                         break;
                     }
