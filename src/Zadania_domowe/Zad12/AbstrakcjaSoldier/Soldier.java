@@ -14,7 +14,7 @@ public class Soldier extends Person2 {
 
     @Override
     public void PresentYourself() {
-        System.out.println (" My name is " + name + "" + surname + " I am from Polish Special Forces " + soldierRank.getSoldierRank () );
+        System.out.println (" My name is " + name + " " + surname + " I am from Polish Special Forces " + soldierRank.getSoldierRank () );
 
     }
 }
