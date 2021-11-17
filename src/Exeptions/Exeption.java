@@ -1,4 +1,8 @@
 package Exeptions;
 
-public class Exeption extends Exception{
+class BrakOcenStudentaExeption extends Exception{
+    public BrakOcenStudentaExeption(){
+        super("Brak Ocen Studenta");
+
+    }
 }
