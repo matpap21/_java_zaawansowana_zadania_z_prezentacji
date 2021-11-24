@@ -24,7 +24,6 @@ public class ZapisWhileScanner {
                 printWriter.flush ();
                 printWriter.println ( wejscieUzytkownika );
 
-
             }while (!wejscieUzytkownika.toUpperCase ().equalsIgnoreCase ("QUIT"));{
                 System.out.println ("End" );
             }

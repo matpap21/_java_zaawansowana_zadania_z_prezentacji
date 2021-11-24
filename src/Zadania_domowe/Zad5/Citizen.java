@@ -37,7 +37,7 @@ public class Citizen {
 
     @Override
     public String toString() {
-        return "Citizen{" +
+        return "Civilian{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", gender=" + gender +

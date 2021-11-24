@@ -15,8 +15,7 @@ public class MainZapisPliku2 {
                 (new FileOutputStream (sciezka))) {
             String newLine;
             newLine = "MorsMordre";
-            for
-            (String line;
+            for (String line;
              (line = reader.readLine ( )) != null; ) {
                 line = line.replace (newLine, " ");
             }
