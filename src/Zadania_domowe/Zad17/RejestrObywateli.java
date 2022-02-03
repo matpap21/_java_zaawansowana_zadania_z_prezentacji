@@ -13,11 +13,13 @@ public class RejestrObywateli {
         this.obywatelMap = new HashMap<> (  );
     }
 
+
     //- dodajObywatela(String imie, String nazwisko, String pesel):void
     public void dodajObywatela(String imie, String nazwisko, String pesel){
         Obywatel obywatel = new Obywatel (imie,nazwisko,pesel);
         obywatelMap.put (pesel,obywatel);
     }
+
 
     //- znajdźObywateliUrodzonychPrzed(int rok):List<Obywatel>
     public List<Obywatel> znajdźObywateliUrodzonychPrzed(int rok){
