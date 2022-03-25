@@ -3,6 +3,7 @@ package Zadania_domowe.Zad17.a;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CitizenRegister {
@@ -50,11 +51,11 @@ public class CitizenRegister {
                 .filter (citizen -> citizen.getSurname ().equalsIgnoreCase (surname))
                 .collect(Collectors.toList());
     }
-    public List<Citizen> FindPersonByPesel(String pesel){
+    public Optional<Citizen> FindPersonByPesel(String pesel){
       return   citizenMap.values ()
                 .stream ()
                 .filter (citizen -> citizen.getPesel ().equalsIgnoreCase (pesel))
-                .collect(Collectors.toList());
+              .findFirst ();
 
     }
 
